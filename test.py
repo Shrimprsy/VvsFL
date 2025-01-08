@@ -1,7 +1,15 @@
-import torch
-import numpy as np
-arr=np.ones((3,3))
-print("arr的数据类型为："+str(arr.dtype))
-t=torch.tensor(arr)
-print(t)
+import pysnooper
 
+
+@pysnooper.snoop()
+def demo_func():
+    profile = {"name": "写代码的明哥", "age": 27, "gender": "male"}
+
+    return profile
+
+
+def main():
+    profile = demo_func()
+
+
+main()
